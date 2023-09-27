@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.universe.demo.mapper.Person2Mapper">
+    <select id="selectAll" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+    </select>
+    <select id="selectByName" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+        where name = #{param1}
+    </select>
+    <!--    where name = #{0} and address = #{1}-->
+    <select id="selectByName2" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+        where name = #{param1}
+          and address = #{param2}
+    </select>
+    <select id="selectByName3" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+        where name = #{_parameter}
+    </select>
+    <select id="selectByName4" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+        where name = #{0}
+    </select>
+    <select id="selectByName5" resultType="com.universe.demo.Person">
+        select *
+        from t_person
+        where name = #{0.name}
+    </select>
+</mapper>
